@@ -1,7 +1,10 @@
 # Emergent-Bees
 
 ## Typen
+Wo liegen Positionen, Geschwindigkeiten und Typen?
+
 - Mother Class: Klassentypen
+- potentiell?
 
 - Child Class 1 - 4: 
     - KlassenID
@@ -13,10 +16,11 @@
 
 Inhalt:
 
-    Wo liegen Positionen, Geschwindigkeiten und Typen?
-    Wer führt einen Simulationsschritt aus?
+    
+    Wer führt einen Simulationsschritt aus? -> der User :)
     Wie gelangt der aktuelle Zustand zur Visualisierung?
-    Wie können Simulation und Benchmark ohne GUI la
+    Wie können Simulation und Benchmark ohne GUI laufen?
+        print-statements :) und nur ein Punkt mit festem Seed?
 
 
 ## Special Gimmicks (Game of Life)
