@@ -5,7 +5,7 @@
 ``` mermaid
 classDiagram
 
-    Dot <-- Dot_Type
+    Dot <-- Dot_Type : erzeugt
     Dot_Type <-- Dot_Instance
 
     class Dot{
@@ -19,11 +19,28 @@ classDiagram
         + interact()
         + int time_to_live
         + int styling
+        + float max_range
+        + float speed 
     }
 
     class Dot_Instance{
         + int type_id
     } 
+
+    class GUI{
+        window()
+        regulator()
+
+    }
+
+
+    class SimulationConfig{
+
+            + int n_particles
+            + int n_types
+            + int seed
+
+    }
 ```
 
 ## Typen
