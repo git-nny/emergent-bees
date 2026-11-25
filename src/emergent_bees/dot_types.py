@@ -23,6 +23,49 @@ class dot_instance(dot_type):
         self.current_movement = [0, 0] 
         self.current_position = current_position
 
+class create_simulation:
+    
+    def __init__(self, noise_start=0):
+        print('Starting simulation')
+        self.dots = None
+        #self.noise = noise_start
+        self.dot_types = [0, 1, 2, 3]
+        # TODO: Bounding Box behaviour
+
+
+    def add_dot(self, dot_type, pos_x, pos_y, current_movement_x=0, current_movement_y=0):
+        """
+        Adds dot to simulation
+        """
+        if dot_type not in self.dot_types:
+            raise(ValueError(f"Dot Type {dot_type} is not available in simulation."))
+        
+        if (pos_x < 0) or (pos_y < 0):
+            raise(ValueError("Position cannot be negative"))
+            # TODO: This assumes that position extends from (0,0) to (screenheigth, screenwidth.) As god intended.
+
+        new_dot = np.array([
+            dot_type, 
+            pos_x + self.noise, 
+            pos_y + self.noise, 
+            current_movement_x, 
+            current_movement_y
+            ])
+
+        if self.dots is not None:
+            self.dots = np.vstack([self.dots, new_dot])
+            print(f'dots {self.dots.shape[0]} created')
+
+        else:
+            self.dots = new_dot
+            print("first dot!")
+
+    def update_dots(self):
+        """ updates available dots per step
+        """
+        pass
+
+
 
 
 
