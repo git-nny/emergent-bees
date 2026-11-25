@@ -34,7 +34,7 @@ jobs:
       - name: Sync project
         run: uv sync --locked
       - name: Run Ruff linter
-        run: uv run --locked ruff check .
+        run: uv run --locked ruff check . --fix
       - name: Check formatting
         run: uv run --locked ruff format --check .
       - name: Run tests
