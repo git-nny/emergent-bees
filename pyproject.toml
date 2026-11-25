@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Kiwi", email = "4lc34ros34@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
