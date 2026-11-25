@@ -44,6 +44,11 @@ classDiagram
     }
 ```
 
+- Reibung, Interaktion für Geschwindigkeit
+- in array-struktur
+    Container -> nd.array 
+    - Dinge eher einzeln mit Typ Numpy array
+
 ## Typen
 Dot
 -> Sachen, die alle Dots gemein haben und gemeinsam erben. Geschwindigkeit findet sich in Größe des Bewegungsvektors (?)
