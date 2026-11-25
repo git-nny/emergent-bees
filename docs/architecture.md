@@ -27,6 +27,7 @@ classDiagram
         + [int, int] current_movement
         + nparray current_position_x
         + nparray current_position_y
+        + int array_size
     } 
 
     class GUI{

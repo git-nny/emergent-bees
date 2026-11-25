@@ -2,6 +2,7 @@ Allgemeine Branch-Merge-Regeln für den Work
 1. Feature in test mergen
 2. test in main mergen
 3. Doc in main mergen
+4. CI in main mergen
 
 
 # Particle Life Simulator
