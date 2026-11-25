@@ -7,9 +7,7 @@ authors = [
     { name = "Kiwi", email = "4lc34ros34@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = [
-    "pytest>=9.2.0",
-]
+dependencies = []
 
 [project.scripts]
 emergent-bees = "emergent_bees:main"
