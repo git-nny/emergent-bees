@@ -9,7 +9,6 @@ classDiagram
     Dot_Type --> Dot_Instance
 
     class Dot_Mother{
-        + class_id
         + int random_noise = random int
     }
 
@@ -19,12 +18,11 @@ classDiagram
         + int time_to_live
         + int styling
         + float max_range
-        + float speed 
     }
 
     class Dot_Instance{
         + int type_id
-        + [int] current_movement
+        + [int, int] current_movement
         + tuple current_position
     } 
 
@@ -41,8 +39,15 @@ classDiagram
             + int n_types
             + int seed
 
+    + calculate new positions()
+
     }
 ```
+
+- Reibung, Interaktion für Geschwindigkeit
+- in array-struktur
+    Container -> nd.array 
+    - Dinge eher einzeln mit Typ Numpy array
 
 ## Typen
 Dot
