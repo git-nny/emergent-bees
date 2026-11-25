@@ -1,3 +1,9 @@
+Allgemeine Branch-Merge-Regeln für den Work
+1. Feature in test mergen
+2. test in main mergen
+3. Doc in main mergen
+
+
 # Particle Life Simulator
 
 EIn Partikle-Life-Simulator ist ein klassisches Beispiel von Emergenz: Viele einfache Partikel folgen eigenen simplen Anziehungs- und Abstoßregeln und erzeugen so komplexe Muster. 
