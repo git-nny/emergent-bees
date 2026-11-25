@@ -7,7 +7,11 @@ authors = [
     { name = "Kiwi", email = "4lc34ros34@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "numba>=0.68.1",
+    "numpy>=2.5.5",
+    "vispy>=0.17.0",
+]
 
 [project.scripts]
 emergent-bees = "emergent_bees:main"
