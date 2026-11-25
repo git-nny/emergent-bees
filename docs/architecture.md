@@ -6,10 +6,11 @@
 classDiagram
 
     Dot_Mother --> Dot_Type : erzeugt
-    Dot_Type --> Dot_Instance
+    Dot_Type --> Dot_Instances
+    GUI --> Dot_Instances
+    SimulationConfig --> GUI
 
     class Dot_Mother{
-        + class_id
         + int random_noise = random int
     }
 
@@ -22,10 +23,11 @@ classDiagram
         + float speed 
     }
 
-    class Dot_Instance{
+    class Dot_Instances{
         + int type_id
-        + [int] current_movement
-        + tuple current_position
+        + [int, int] current_movement
+        + nparray current_position_x
+        + nparray current_position_y
     } 
 
     class GUI{
