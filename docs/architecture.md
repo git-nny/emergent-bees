@@ -5,13 +5,12 @@
 ``` mermaid
 classDiagram
 
-    Dot <-- Dot_Type : erzeugt
-    Dot_Type <-- Dot_Instance
+    Dot_Mother --> Dot_Type : erzeugt
+    Dot_Type --> Dot_Instance
 
-    class Dot{
+    class Dot_Mother{
         + class_id
-        + current_movement
-        + current_position
+        + int random_noise = random int
     }
 
     class Dot_Type{
@@ -25,6 +24,8 @@ classDiagram
 
     class Dot_Instance{
         + int type_id
+        + [int] current_movement
+        + tuple current_position
     } 
 
     class GUI{
