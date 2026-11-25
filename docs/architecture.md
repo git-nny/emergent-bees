@@ -20,7 +20,6 @@ classDiagram
         + int time_to_live
         + int styling
         + float max_range
-        + float speed 
     }
 
     class Dot_Instances{
@@ -43,8 +42,15 @@ classDiagram
             + int n_types
             + int seed
 
+    + calculate new positions()
+
     }
 ```
+
+- Reibung, Interaktion für Geschwindigkeit
+- in array-struktur
+    Container -> nd.array 
+    - Dinge eher einzeln mit Typ Numpy array
 
 ## Typen
 Dot
