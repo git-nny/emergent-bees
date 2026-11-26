@@ -1,36 +1,11 @@
 import numpy as np
 
-class dot_mother:
-
-    def __init__(self):
-        pass
-        # random noise TODO 
-
-class dot_type(dot_mother):
-
-    def __init__(self, type_id, time_to_live, max_range):
-        super().init()
-        self.type_id = type_id
-        self.time_to_live = time_to_live
-        self.max_range = max_range
-
-    #def interact():
-
-class dot_instance(dot_type):
-
-    def __init__(self, type_id, current_position):
-        super().init(type_id)
-        self.current_movement = [0, 0] 
-        self.current_position = current_position
 
 class create_simulation:
     
-    def __init__(self, noise_start=0):
-        print('Starting simulation')
+    def __init__(self):
         self.dots = None
-        #self.noise = noise_start
         self.dot_types = [0, 1, 2, 3]
-        # TODO: Bounding Box behaviour
 
 
     def add_dot(self, dot_type, pos_x, pos_y, current_movement_x=0, current_movement_y=0):
@@ -42,28 +17,43 @@ class create_simulation:
         
         if (pos_x < 0) or (pos_y < 0):
             raise(ValueError("Position cannot be negative"))
-            # TODO: This assumes that position extends from (0,0) to (screenheigth, screenwidth.) As god intended.
+            # This assumes that position extends from (0,0) to (screenheigth, screenwidth.) As god intended.
 
         new_dot = np.array([
             dot_type, 
-            pos_x + self.noise, 
-            pos_y + self.noise, 
+            pos_x, 
+            pos_y, 
             current_movement_x, 
             current_movement_y
             ])
 
         if self.dots is not None:
             self.dots = np.vstack([self.dots, new_dot])
-            print(f'dots {self.dots.shape[0]} created')
+            print(f'{self.dots.shape[0]} dots created')
 
         else:
             self.dots = new_dot
-            print("first dot!")
 
-    def update_dots(self):
-        """ updates available dots per step
+    def wiggle_dots(self, noise_strength=1):
+        """ updates available dot position per step with the noise strength set in simulation start.
+        TODO: check if this looks good in GUI. Change if it looks ugly 
         """
-        pass
+
+        rng = np.random.default_rng()
+        noise = rng.normal(0, 1, 2)
+        noise_x = int(noise[0] * noise_strength)
+        noise_y = int(noise[1] * noise_strength)
+        
+        try:
+            self.dots[:, 1:3] += np.array([noise_x, noise_y])
+
+        except IndexError:
+            self.dots[1:3] += np.array([noise_x, noise_y])
+
+        except TypeError as e:
+            print(f"{e}. Are there dots available to wiggle?")
+
+        return self.dots
 
 
 
